@@ -1,0 +1,40 @@
+
+body {
+    margin: 0px;
+}
+header {
+    background-image: url(fon.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100svh;
+}
+@media (max-width: 768px) {
+    header {
+        background-position: 90% center;
+    }
+}
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    color: rgb(65, 15, 15);
+    padding: 20px;
+}
+.links a {
+    color: rgb(255, 212, 212);
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.links a:hover {
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+.links {
+    display: flex;
+    gap: 40px;
+}
