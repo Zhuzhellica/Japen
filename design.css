@@ -1,40 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-body {
-    margin: 0px;
-}
 header {
-    background-image: url(fon.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    width: 100%;
     min-height: 100svh;
+    position: relative;
+
+    background: url("fon.jpg") center / cover no-repeat;
 }
-@media (max-width: 768px) {
-    header {
-        background-position: 90% center;
-    }
-}
+
+/* твоя шапка */
 .top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.3);
-    color: rgb(65, 15, 15);
+
+    position: absolute;
+    top: 0;
+    width: 100%;
+
     padding: 20px;
+    background: rgba(0,0,0,0.3);
+    color: rgb(255, 212, 212);
+}
+
+/* цитата по центру */
+.quote-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    max-width: 700px;
+    padding: 40px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.158);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+
+    font-family: Georgia, serif;
+
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+}
+
+.quote-box p {
+    font-size: 26px;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.quote-box cite {
+    color: #444;
+}
+
+/* плавное появление */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+.links {
+    display: flex;
+    gap: 50px;   /* было 40px */
 }
 .links a {
-    color: rgb(255, 212, 212);
-    text-decoration: none;
-    transition: 0.3s;
-    display: inline-block;
+    color: #ffd4d4;          /* светлый цвет */
+    text-decoration: none;   /* без подчёркивания */
+    display: inline-block;   /* нужно для увеличения */
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .links a:hover {
-    text-decoration: none;
-    transform: scale(1.1);
-}
-
-.links {
-    display: flex;
-    gap: 40px;
+    transform: scale(1.15);
+    color: white;
+    text-shadow: 0 0 8px rgba(255,255,255,0.6);
 }
