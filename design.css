@@ -94,6 +94,9 @@ header {
 
 /* ===== для телефона ===== */
 @media (max-width: 768px) {
+    header {
+        background-position: 90% center;
+    }
 
     .top {
         flex-direction: column;
