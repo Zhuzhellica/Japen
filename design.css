@@ -4,61 +4,81 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+}
 header {
-    width: 100%;
+    background-image: url(fon.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     min-height: 100svh;
     position: relative;
 
-    background: url("fon.jpg") center / cover no-repeat;
+    display: flex;
+    flex-direction: column;
 }
-
-/* твоя шапка */
 .top {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    position: absolute;
-    top: 0;
-    width: 100%;
-
     padding: 20px;
-    background: rgba(0,0,0,0.3);
-    color: rgb(255, 212, 212);
-}
+    background: rgba(0,0,0,0.35);
 
-/* цитата по центру */
+    position: relative;
+    z-index: 2;
+}
+.logo {
+    color: white;
+    font-size: clamp(18px, 2vw, 26px);
+    font-weight: bold;
+}
+.links {
+    display: flex;
+    gap: 30px;
+}
+.links a {
+    color: #ffe6e6;
+    text-decoration: none;
+    font-size: clamp(14px, 1.2vw, 18px);
+    transition: transform 0.3s ease;
+}
+.links a:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 6px rgba(255, 182, 193, 0.8),
+                 0 0 12px rgba(255, 182, 193, 0.5);
+}
 .quote-box {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    max-width: 700px;
-    padding: 40px;
+    max-width: 80%;
+    padding: clamp(20px, 4vw, 40px);
+
     text-align: center;
 
-    background: rgba(255, 255, 255, 0.158);
+    background: rgba(255,255,255,0.85);
     border-radius: 20px;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(6px);
 
     font-family: Georgia, serif;
 
     opacity: 0;
     animation: fadeIn 2s ease forwards;
 }
-
-.quote-box p {
-    font-size: 26px;
-    font-style: italic;
-    margin-bottom: 15px;
+.quote {
+    font-size: clamp(18px, 2.5vw, 32px);
+    line-height: 1.5;
 }
-
-.quote-box cite {
-    color: #444;
+.author {
+    margin-top: 15px;
+    font-size: clamp(14px, 1.5vw, 20px);
+    color: #777;
 }
-
-/* плавное появление */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -69,19 +89,24 @@ header {
         transform: translate(-50%, -50%);
     }
 }
-.links {
-    display: flex;
-    gap: 50px;   /* было 40px */
-}
-.links a {
-    color: #ffd4d4;          /* светлый цвет */
-    text-decoration: none;   /* без подчёркивания */
-    display: inline-block;   /* нужно для увеличения */
-    transition: transform 0.3s ease, color 0.3s ease;
-}
 
-.links a:hover {
-    transform: scale(1.15);
-    color: white;
-    text-shadow: 0 0 8px rgba(255,255,255,0.6);
+/* ===== для телефона ===== */
+@media (max-width: 768px) {
+
+    .top {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .quote-box {
+        max-width: 90%;
+        padding: 20px;
+    }
 }
