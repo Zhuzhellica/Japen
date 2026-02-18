@@ -56,8 +56,8 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    max-width: 80%;
-    padding: clamp(20px, 4vw, 40px);
+    max-width: 1000px;
+    padding: clamp(30px, 5vw, 70px);
 
     text-align: center;
 
@@ -68,17 +68,20 @@ header {
     font-family: Georgia, serif;
 
     opacity: 0;
-    animation: fadeIn 2s ease forwards;
+    animation: fadeIn 3.5s ease-out forwards;
+    animation-delay: 0.5s; 
     color: white;
+    
+    opacity: 0;
 }
 .quote {
-    font-size: clamp(18px, 2.5vw, 32px);
+    font-size: clamp(18px, 2.5vw, 36px);
     line-height: 1.5;
     color: #f5eeef;
 }
 .author {
     margin-top: 15px;
-    font-size: clamp(14px, 1.5vw, 20px);
+    font-size: clamp(14px, 1.5vw, 22px);
     color: rgba(255,255,255,0.7);
 }
 @keyframes fadeIn {
