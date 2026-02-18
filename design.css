@@ -31,7 +31,7 @@ header {
     z-index: 2;
 }
 .logo {
-    color: white;
+    color: rgb(235, 225, 228);
     font-size: clamp(18px, 2vw, 26px);
     font-weight: bold;
 }
@@ -61,7 +61,7 @@ header {
 
     text-align: center;
 
-    background: rgba(255,255,255,0.85);
+    background: rgba(255, 255, 255, 0.116);
     border-radius: 20px;
     backdrop-filter: blur(6px);
 
@@ -69,15 +69,17 @@ header {
 
     opacity: 0;
     animation: fadeIn 2s ease forwards;
+    color: white;
 }
 .quote {
     font-size: clamp(18px, 2.5vw, 32px);
     line-height: 1.5;
+    color: #f5eeef;
 }
 .author {
     margin-top: 15px;
     font-size: clamp(14px, 1.5vw, 20px);
-    color: #777;
+    color: rgba(255,255,255,0.7);
 }
 @keyframes fadeIn {
     from {
